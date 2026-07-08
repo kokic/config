@@ -12,13 +12,13 @@ config.initial_cols = 100
 config.initial_rows = 28
 
 config.font_size = 12
-config.font = wezterm.font 'Maple Mono NF'
+config.font = wezterm.font 'Maple Mono NF CN'
 config.color_scheme = 'Catppuccin Mocha'
 config.default_cursor_style = 'BlinkingBar'
 config.enable_scroll_bar = true
 
 if wezterm.target_triple:find("windows") then
-  config.default_prog = { 'C:/Users/kokic/packages/multiple/nu/nu.exe' }
+ config.default_prog = { 'nu' }
 end
 
 -- Smart copy, also see: https://github.com/wezterm/wezterm/discussions/2426
