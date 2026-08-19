@@ -1,4 +1,5 @@
 
+
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
@@ -11,15 +12,27 @@ local act = wezterm.action
 config.initial_cols = 100
 config.initial_rows = 28
 
-config.font_size = 12
-config.font = wezterm.font 'Maple Mono NF CN'
+config.font_size = 16
+-- config.font = wezterm.font 'Maple Mono NF'
 config.color_scheme = 'Catppuccin Mocha'
 config.default_cursor_style = 'BlinkingBar'
 config.enable_scroll_bar = true
 
 if wezterm.target_triple:find("windows") then
- config.default_prog = { 'nu' }
+  config.default_prog = { 'C:/Users/kokic/packages/multiple/nu/nu.exe' }
 end
+
+if wezterm.target_triple:find("darwin") then
+  config.default_prog = { '/opt/homebrew/bin/nu' }
+end
+
+config.window_frame = {
+  -- font = wezterm.font 'Roboto',
+  font_size = 15,
+}
+
+config.tab_max_width = 40
+config.use_fancy_tab_bar = true
 
 -- Smart copy, also see: https://github.com/wezterm/wezterm/discussions/2426
 config.keys = {
@@ -48,3 +61,5 @@ config.keys = {
 
 -- Finally, return the configuration to wezterm:
 return config
+
+
